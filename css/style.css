@@ -1,70 +1,68 @@
+/* style.css */
+
+/* Paleta de cores: */
+:root {
+    --azul-principal: #4ABDAC;
+    --verde-suave: #A1DE93;
+    --cinza-texto: #556677;
+    --fundo-formulario: #f0f7f7;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     max-width: 600px;
     margin: 20px auto;
     padding: 20px;
-    background-color: #e3f2fd;
+    background-color: var(--fundo-formulario);
 }
 
 .container {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Cabeçalho e Título */
 h1 {
-    color: #2196F3;
+    color: var(--azul-principal);
     text-align: center;
-    margin-bottom: 30px;
-}
-
-.form-group {
+    font-size: 2em;
     margin-bottom: 20px;
 }
 
-label {
-    display: block;
-    margin-bottom: 8px;
-    color: #333;
-}
-
 .icon {
-    margin-right: 10px;
-    color: #2196F3;
+    color: var(--azul-principal);
+    margin-right: 8px;
 }
 
+label {
+    color: var(--cinza-texto);
+}
+
+/* Inputs e Botões */
 input[type="text"],
 input[type="number"],
 select {
     width: 100%;
-    padding: 8px;
+    padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 6px;
     box-sizing: border-box;
-}
-
-.radio-group {
-    margin: 10px 0;
-}
-
-.btn-group {
-    display: flex;
-    gap: 10px;
-    justify-content: center;
-    margin-top: 20px;
+    margin-top: 5px;
 }
 
 button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
+    transition: background 0.3s ease;
 }
 
 #confirmar {
-    background-color: #2196F3;
+    background-color: var(--azul-principal);
     color: white;
 }
 
@@ -73,87 +71,35 @@ button {
     color: white;
 }
 
+/* Animação para botões */
+button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Resultado */
 #resultado {
-    margin-top: 20px;
-    padding: 20px;
     background-color: #e8f5e9;
-    border-radius: 4px;
-    display: none;
-}
-
-footer {
-    text-align: center;
-    margin-top: 30px;
-    color: #666;
-    font-size: 0.9em;
-}
-
-#horasGroup {
-    display: none;
-}
-
-.timeline {
-    margin-top: 30px;
+    border: 1px solid var(--verde-suave);
     padding: 20px;
-    background: #fff;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    display: none;
 }
 
-.timeline-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-    padding: 10px 0;
-}
-
-.timeline-line {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: #2196F3;
-    z-index: 1;
-}
-
+/* Timeline e estilo dos copos */
 .timeline-point {
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative;
-    z-index: 2;
-    background: white;
-    padding: 5px;
-    min-width: 60px;
+    min-width: 70px;
+    transition: transform 0.2s ease;
 }
 
-.timeline-hour {
-    font-size: 0.8em;
-    color: #666;
-    margin-top: 5px;
+.timeline-point:hover {
+    transform: scale(1.1);
 }
 
-.timeline-glass {
-    color: #2196F3;
-    font-size: 1.2em;
-    margin-bottom: 5px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.timeline-quantity {
-    font-size: 0.8em;
-    font-weight: bold;
-    color: #2196F3;
-    margin-top: 2px;
-}
-
-#modificar {
-    background-color: #4CAF50;
-    color: white;
-    margin-top: 20px;
+.timeline-glass i {
+    color: var(--azul-principal);
+    font-size: 1.5em;
 }
